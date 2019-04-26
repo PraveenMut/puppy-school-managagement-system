@@ -10,7 +10,7 @@ class PuppiesController < ApplicationController
   def create
     @puppy = Puppy.new(puppy_params)
     if @puppy.save
-      redirect_to puppy_path(puppy.id)
+      redirect_to puppy_path(@puppy.id)
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class PuppiesController < ApplicationController
   def update
     @puppy = Puppy.find(params[:id])
     @puppy.update(puppy_params)
-    redirect_to puppy_path(puppy.id)
+    redirect_to puppy_path(@puppy.id)
   end
 
   def delete
