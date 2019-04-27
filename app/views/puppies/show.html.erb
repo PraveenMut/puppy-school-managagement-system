@@ -2,7 +2,7 @@
 <h2> <%= @puppy.age %></h2>
 <h2>Image of Pup</h2>
 <% if @puppy.uploaded_image.attached? %>
-  <%= image_tag @puppy.uploaded_image %> 
+  <%= image_tag @puppy.uploaded_image.service_url %> 
 <% else %>
   <img src="assets/placeholder.png">
 <% end %>
