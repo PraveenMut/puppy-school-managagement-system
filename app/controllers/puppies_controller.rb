@@ -1,4 +1,6 @@
 class PuppiesController < ApplicationController
+  before_action :authenticate_user!, except: :index
+
   def index
     @puppies = Puppy.all
   end
